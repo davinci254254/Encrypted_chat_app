@@ -317,7 +317,8 @@ int main() {
     int srvSock = socket(AF_INET, SOCK_STREAM, 0);
     sockaddr_in srvAddr{}, cliAddr{};
     socklen_t cliLen = sizeof(cliAddr);
-    string ip = "10.9.0.6";
+    // string ip = "10.9.0.6";
+    string ip = "10.232.158.96";
     int port = 5194;
 
     RSA* my_rsa = generate_rsa_keypair();
