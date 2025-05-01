@@ -334,6 +334,12 @@ int main() {
 
     RSA* my_rsa = generate_rsa_keypair();
     int sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock < 0) {
+        cerr << "[ERROR] Socket creation failed.\n";
+        return 1;
+    }
+    cout << "[LOG] Socket created.\n";
+    
     sockaddr_in srv{};
     srv.sin_family = AF_INET;
     srv.sin_port = htons(port);
@@ -343,7 +349,8 @@ int main() {
         RSA_free(my_rsa);
         return 1;
     }
-
+    cout << "[LOG] Connected to server.\n";
+    
     send_public_key(sock, my_rsa);
     RSA* server_rsa = receive_public_key(sock);
     RAND_bytes(session_key, 32);
