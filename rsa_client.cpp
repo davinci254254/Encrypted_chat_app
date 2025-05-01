@@ -318,7 +318,7 @@ void receiver(int sock) {
 /* ---------- 主函数 ---------- */
 int main() {
     // string ip = "10.9.0.6";
-    string ip = "172.27.57.118";
+    string ip = "10.232.165.136";
     int port = 5194;
 
     cout << "[CLIENT] Choose encryption mode:\n"
