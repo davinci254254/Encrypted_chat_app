@@ -318,7 +318,7 @@ int main() {
     sockaddr_in srvAddr{}, cliAddr{};
     socklen_t cliLen = sizeof(cliAddr);
     // string ip = "10.9.0.6";
-    string ip = "10.232.165.136";
+    string ip = "172.27.57.118";
     int port = 5194;
 
     RSA* my_rsa = generate_rsa_keypair();
